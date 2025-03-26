@@ -1,110 +1,51 @@
-# 📁 Template Front-end: HTML, CSS e JavaScript Puro
+# 🌦️ App Clima
 
-## Descrição
+Aplicação web simples que exibe informações climáticas em tempo real, como temperatura e vento, a partir da cidade informada pelo usuário. Os dados são fornecidos pela [OpenWeather API](https://openweathermap.org/).
 
-Este repositório é um **Template Repository** pronto para iniciar projetos front-end simples utilizando **HTML5**, **CSS3** e **JavaScript puro**.
+## 🚀 Funcionalidades
 
-Ele já vem configurado com:
+- Buscar clima por nome da cidade.
+- Mostrar temperatura atual (°C).
+- Exibir velocidade e direção do vento.
+- Ícone representando o clima atual.
+- Interface responsiva e centrada na tela.
+- Feedback visual para carregamento e erros.
 
-- Ferramentas de qualidade de código (**ESLint**, **Prettier** e **Stylelint**)
-- Pipeline automatizada com **GitHub Actions** para validar Pull Requests
-- Estrutura básica de pastas para scripts, estilos e HTML inicial
+## 💡 Tecnologias
 
-Ideal para projetos pequenos, testes, ou inícios de landing pages e aplicações simples!
+- HTML5
+- CSS3
+- JavaScript (ES6)
+- [OpenWeatherMap API](https://openweathermap.org/current)
 
----
+## 🔧 Como usar
 
-## Estrutura do Template
-
-```
-front-end-template/
-├── .github/workflows/
-│   ├── pr-check.yml             # Pipeline para validação de PRs (Lint, Prettier, Build)
-│   └── sync-develop.yml         # Pipeline opcional para manter develop sincronizada
-├── src/
-│   ├── scripts/
-│   │   └── script.js            # JS principal
-│   ├── styles/
-│   │   └── style.css            # Estilização
-│   └── index.html               # Estrutura HTML inicial
-├── .eslintrc.config.js          # Configuração do ESLint
-├── .prettierrc                  # Configuração do Prettier
-├── .stylelintrc.json            # Configuração do Stylelint
-├── package.json                 # Scripts e dependências npm
-└── README.md                    # Documentação
-```
-
----
-
-## Tecnologias Incluídas
-
-- **HTML5**
-- **CSS3**
-- **JavaScript (ES6+)**
-- **ESLint**
-- **Prettier**
-- **Stylelint**
-- **GitHub Actions (CI/CD)**
-
----
-
-## Como usar este template
-
-1. Clique no botão verde **"Use this template"** no topo do repositório.
-2. Dê um nome ao seu novo projeto.
-3. Clone o repositório recém-criado:
+1. Clone este repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/seu-novo-projeto.git
+git clone https://github.com/peandrade/clima.git
 ```
 
-4. Instale as dependências:
+2. Abra o arquivo `index.html` em seu navegador.
 
-```bash
-npm install
-```
+> **Nota:** Para utilizar sua própria chave da API:
 
-5. Utilize os scripts para garantir qualidade:
+- Acesse [OpenWeatherMap](https://openweathermap.org/api) e crie uma conta.
+- Substitua a chave no arquivo `script.js`:
+  ```js
+  const results = await fetch(
+    `https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(input)}&appid=SUA_API_KEY&units=metric&lang=pt_br`,
+  );
+  ```
 
-```bash
-npm run lint
-npm run prettier:check
-npm run stylelint
-```
+## 🛡️ Aviso
 
-6. Abra `index.html` diretamente no navegador para visualizar.
+A chave da API está exposta no front-end por simplicidade. Em produção, recomenda-se esconder isso utilizando um back-end ou variável de ambiente segura.
 
----
+## 👤 Autor
 
-## Scripts Disponíveis
-
-| Comando                  | O que faz                                         |
-| ------------------------ | ------------------------------------------------- |
-| `npm run lint`           | Roda o ESLint                                     |
-| `npm run prettier:check` | Checa formatação com Prettier                     |
-| `npm run prettier:fix`   | Corrige automaticamente a formatação              |
-| `npm run stylelint`      | Valida CSS com Stylelint                          |
-| `npm run stylelint:fix`  | Corrige CSS automaticamente                       |
-| `npm run build`          | Dummy build (personalizável para outros projetos) |
+- Pedro Andrade - [@peandrade](https://github.com/peandrade)
 
 ---
 
-## Regras de Merge e CI/CD
-
-Este template possui configurações de **Branch Protection Rules** recomendadas:
-
-- ❌ Não é permitido merge direto na `develop` ou `main` sem PR.
-- ✅ Pull Requests obrigatoriamente passam por:
-  - ESLint (JS)
-  - Prettier (formatação)
-  - Stylelint (CSS)
-- Merge é bloqueado se qualquer check falhar.
-- Atualiza automaticamente `develop` após merge na `main` (opcional).
-
----
-
-## Autor
-
-Mantido por [Pedro Andrade](https://github.com/peandrade) 👨‍💻
-
----
+🧊 Sinta-se à vontade para contribuir ou sugerir melhorias!
