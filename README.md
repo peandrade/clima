@@ -29,10 +29,13 @@ git clone https://github.com/peandrade/clima.git
 2. Abra o arquivo `index.html` em seu navegador.
 
 > **Nota:** Para utilizar sua própria chave da API:
+
 - Acesse [OpenWeatherMap](https://openweathermap.org/api) e crie uma conta.
 - Substitua a chave no arquivo `script.js`:
   ```js
-  const results = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(input)}&appid=SUA_API_KEY&units=metric&lang=pt_br`);
+  const results = await fetch(
+    `https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(input)}&appid=SUA_API_KEY&units=metric&lang=pt_br`,
+  );
   ```
 
 ## 🛡️ Aviso
